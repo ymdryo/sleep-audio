@@ -9,16 +9,7 @@ const CHANNELS: i32 = 2;
 const SAMPLE_RATE: f64 = 44_100.0;
 const FRAMES_PER_BUFFER: u32 = 64;
 
-fn main() {
-   match run() {
-      Ok(_) => {}
-      e => {
-         eprintln!("Example failed with the following: {:?}", e);
-      }
-   }
-}
-
-fn run() -> Result<(), pa::Error> {
+fn main() -> Result<()> {
    let pa = pa::PortAudio::new()?;
 
    let mut settings =
